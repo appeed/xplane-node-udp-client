@@ -44,7 +44,9 @@ module.exports = class XPlaneClient {
     // console.log('sending:', data);
     client.send(data, this.port, this.host, function cb(error /* , bytes */) {
       if (error) {
-        client.close();
+        if (client) {
+          client.close();
+        }
         client = null;
         console.error(`XPlaneClient failed to send data X-Plane: ${error}`);
       }
