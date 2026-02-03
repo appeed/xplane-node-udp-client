@@ -194,7 +194,6 @@ module.exports = class XPlaneClient {
               dataRef.value = drefFltValue;
 
               if (dataRef.callback !== undefined) {
-                console.log('calling callback');
                 dataRef.callback(dataRef.dataRef, drefFltValue);
               }
             }
